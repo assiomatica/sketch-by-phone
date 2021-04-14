@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* globals Hammer */
 
 import React, { Component } from 'react';
@@ -61,8 +62,8 @@ export const moveControlFactory = Hammer => class MoveControl extends Component 
             });
         }
         onTranslateChange({
-                x: this.state.pan.startX + ev.deltaX / 200,
-                z: this.state.pan.startZ + ev.deltaY / 200,
+            x: this.state.pan.startX + ev.deltaX / 200,
+            z: this.state.pan.startZ + ev.deltaY / 200,
         });
     }
 
@@ -104,9 +105,9 @@ export const moveControlFactory = Hammer => class MoveControl extends Component 
 
     render() {
         return <div
-            style={styles.container}
-            ref={this.storeRef}
-        ></div>;
+        style = { styles.container }
+        ref = { this.storeRef } >
+            < /div>;
     }
 }
 

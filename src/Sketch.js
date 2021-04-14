@@ -1,4 +1,6 @@
+/* eslint-disable */
 /* eslint jsx-a11y/img-redundant-alt: off */
+
 import React, { Component } from 'react';
 import isEqual from 'lodash.isequal';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -71,72 +73,75 @@ class Sketch extends Component {
     handleMarkerFound = () => this.setState({ markerFound: true });
 
     render() {
-        const {
-            markerFound,
-            showTips,
-            opacity,
-            isDetectingEdge,
-            blur,
-            lowTreshold,
-            highTreshold,
-            coord: {
-                x: coordX,
-                z: coordZ,
-            },
-            scale: {
-                x: scaleX,
-                y: scaleY,
-            },
-            rotation,
-        } = this.state;
+            const {
+                markerFound,
+                showTips,
+                opacity,
+                isDetectingEdge,
+                blur,
+                lowTreshold,
+                highTreshold,
+                coord: {
+                    x: coordX,
+                    z: coordZ,
+                },
+                scale: {
+                    x: scaleX,
+                    y: scaleY,
+                },
+                rotation,
+            } = this.state;
 
-        const { image, blackImage } = this.props;
+            const { image, blackImage } = this.props;
 
-        return (
-            <div>
-                <SketchRenderer
-                    coordX={coordX}
-                    coordZ={coordZ}
-                    scaleX={scaleX}
-                    scaleY={scaleY}
-                    rotation={rotation}
-                    opacity={opacity}
-                    isDetectingEdge={isDetectingEdge}
-                    blur={blur}
-                    lowTreshold={lowTreshold}
-                    highTreshold={highTreshold}
-                    image={image}
-                    blackImage={blackImage}
-                    onMarkerFound={this.handleMarkerFound}
-                />
-                {!markerFound && <MarkerSearch />}
-                {markerFound && <MoveControl
-                    coordX={coordX}
-                    coordZ={coordZ}
-                    scaleX={scaleX}
-                    scaleY={scaleY}
-                    rotation={rotation}
-                    onTranslateChange={this.handleTranslateChange}
-                    onZoomChange={this.handleZoomChange}
-                    onRotationChange={this.handleRotationChange}
-                /> }
-                {markerFound && showTips && <Tips onHide={this.handleHideTips} />}
-                <RaisedButton style={styles.backButton} onClick={this.handleBack} label="Back" />
-                <Settings
-                    opacity={opacity}
-                    blur={blur}
-                    lowTreshold={lowTreshold}
-                    highTreshold={highTreshold}
-                    isDetectingEdge={isDetectingEdge}
-                    onOpacityChange={this.handleOpacityChange}
-                    onDetectEdgeChange={this.handleDetectEdgeChange}
-                    onBlurChange={this.handleBlurChange}
-                    onLowTresholdChange={this.handleLowTresholdChange}
-                    onHighTresholdChange={this.handleHighTresholdChange}
-                />
-            </div>
-        );
-    }
-}
+            return ( <
+                div >
+                <
+                SketchRenderer coordX = { coordX }
+                coordZ = { coordZ }
+                scaleX = { scaleX }
+                scaleY = { scaleY }
+                rotation = { rotation }
+                opacity = { opacity }
+                isDetectingEdge = { isDetectingEdge }
+                blur = { blur }
+                lowTreshold = { lowTreshold }
+                highTreshold = { highTreshold }
+                image = { image }
+                blackImage = { blackImage }
+                onMarkerFound = { this.handleMarkerFound }
+                /> {!markerFound && < MarkerSearch / > } {
+                    markerFound && < MoveControl
+                    coordX = { coordX }
+                    coordZ = { coordZ }
+                    scaleX = { scaleX }
+                    scaleY = { scaleY }
+                    rotation = { rotation }
+                    onTranslateChange = { this.handleTranslateChange }
+                    onZoomChange = { this.handleZoomChange }
+                    onRotationChange = { this.handleRotationChange }
+                    /> } {
+                        markerFound && showTips && < Tips onHide = { this.handleHideTips }
+                        />} <
+                        RaisedButton style = { styles.backButton }
+                        onClick = { this.handleBack }
+                        label = "Back" / >
+                            <
+                            Settings
+                        opacity = { opacity }
+                        blur = { blur }
+                        lowTreshold = { lowTreshold }
+                        highTreshold = { highTreshold }
+                        isDetectingEdge = { isDetectingEdge }
+                        onOpacityChange = { this.handleOpacityChange }
+                        onDetectEdgeChange = { this.handleDetectEdgeChange }
+                        onBlurChange = { this.handleBlurChange }
+                        onLowTresholdChange = { this.handleLowTresholdChange }
+                        onHighTresholdChange = { this.handleHighTresholdChange }
+                        /> <
+                        /div>
+                    );
+                }
+            }
 
-export default Sketch;
+            export default Sketch;

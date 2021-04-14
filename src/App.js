@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/* eslint-disable */
+import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FileSelection from './FileSelection';
 import Sketch from './Sketch';
@@ -14,7 +15,7 @@ const styles = {
     },
 };
 
-class App extends Component {
+class App extends React.Component {
     state = {
         image: null,
     };

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import GalleryItem from './GalleryItem';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -28,13 +29,19 @@ const defaultImages = [
     require('./assets/drawing7.png'),
 ];
 
-const Gallery = ({ images = defaultImages, onClose, onSelected }) => (
-    <div style={styles.container}>        
-        <RaisedButton secondary fullWidth onClick={onClose} label="Cancel" />
-        <div style={styles.gallery}>        
-            {images.map(image => <GalleryItem key={image} image={image} onSelected={onSelected} />)}
-        </div>
-    </div>
-)
+const Gallery = ({ images = defaultImages, onClose, onSelected }) => ( <
+        div style = { styles.container } >
+        <
+        RaisedButton secondary fullWidth onClick = { onClose }
+        label = "Cancel" / >
+        <
+        div style = { styles.gallery } > {
+            images.map(image => < GalleryItem key = { image }
+                image = { image }
+                onSelected = { onSelected }
+                />)} <
+                /div> <
+                /div>
+            )
 
-export default Gallery;
+            export default Gallery;

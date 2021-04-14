@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
@@ -57,7 +58,7 @@ class Settings extends Component {
     }
 
     handleClose = () => {
-        setTimeout(() => {        
+        setTimeout(() => {
             this.setState({ isOpen: false });
         }, 500);
     }
@@ -65,7 +66,9 @@ class Settings extends Component {
     render() {
         const { isOpen } = this.state;
         if (!isOpen) {
-            return <RaisedButton style={styles.openButton} onClick={this.handleOpen} label="Settings" />
+            return <RaisedButton style = { styles.openButton }
+            onClick = { this.handleOpen }
+            label = "Settings" / >
         }
 
         const {
@@ -81,71 +84,70 @@ class Settings extends Component {
             onDetectEdgeChange
         } = this.props;
 
-        return (
-            <div style={styles.modal}>
-                { !isDetectingEdge &&
-                    <div style={styles.modalItem}>
-                        <Subheader>Opacity: {opacity}</Subheader>
-                        <Slider
-                            name="opacity"
-                            value={opacity}
-                            onChange={onOpacityChange}
-                            sliderStyle={styles.slider}
-                        />
-                    </div>
-                }
-                {
-                    isDetectingEdge && (
-                        <div style={styles.detectOptions}>
-                            <div style={styles.detectOptionItemFull}>
-                                <Subheader>blur: {blur}</Subheader>
-                                <Slider
-                                    name="blur"
-                                    value={blur}
-                                    max={4}
-                                    onChange={onBlurChange}
-                                    sliderStyle={styles.slider}
-                                />
-                            </div>
-                            <div style={styles.detectOptionItem}>
-                                <Subheader>low treshold: {lowTreshold}</Subheader>
-                                <Slider
-                                    name="lowTreshold"
-                                    value={lowTreshold}
-                                    max={127}
-                                    onChange={onLowTresholdChange}
-                                    sliderStyle={styles.slider}
-                                />
-                            </div>
-                            <div style={styles.detectOptionItem}>
-                                <Subheader>high treshold: {highTreshold}</Subheader>
-                                <Slider
-                                    name="highTreshold"
-                                    value={highTreshold}
-                                    max={127}
-                                    onChange={onHighTresholdChange}
-                                    sliderStyle={styles.slider}
-                                />
-                            </div>
-                        </div>
-                    )
-                }
-                <Checkbox
-                    name="isDetectingEdge"
-                    type="checkbox"
-                    checked={isDetectingEdge}
-                    onCheck={onDetectEdgeChange}
-                    label="detect edge"
-                    style={styles.detectEdges}
-                />
+        return ( <
+            div style = { styles.modal } > {!isDetectingEdge &&
+                <
+                div style = { styles.modalItem } >
+                <
+                Subheader > Opacity: { opacity } < /Subheader> <
+                Slider
+                name = "opacity"
+                value = { opacity }
+                onChange = { onOpacityChange }
+                sliderStyle = { styles.slider }
+                /> <
+                /div>
+            } {
+                isDetectingEdge && ( <
+                    div style = { styles.detectOptions } >
+                    <
+                    div style = { styles.detectOptionItemFull } >
+                    <
+                    Subheader > blur: { blur } < /Subheader> <
+                    Slider name = "blur"
+                    value = { blur }
+                    max = { 4 }
+                    onChange = { onBlurChange }
+                    sliderStyle = { styles.slider }
+                    /> <
+                    /div> <
+                    div style = { styles.detectOptionItem } >
+                    <
+                    Subheader > low treshold: { lowTreshold } < /Subheader> <
+                    Slider name = "lowTreshold"
+                    value = { lowTreshold }
+                    max = { 127 }
+                    onChange = { onLowTresholdChange }
+                    sliderStyle = { styles.slider }
+                    /> <
+                    /div> <
+                    div style = { styles.detectOptionItem } >
+                    <
+                    Subheader > high treshold: { highTreshold } < /Subheader> <
+                    Slider name = "highTreshold"
+                    value = { highTreshold }
+                    max = { 127 }
+                    onChange = { onHighTresholdChange }
+                    sliderStyle = { styles.slider }
+                    /> <
+                    /div> <
+                    /div>
+                )
+            } <
+            Checkbox name = "isDetectingEdge"
+            type = "checkbox"
+            checked = { isDetectingEdge }
+            onCheck = { onDetectEdgeChange }
+            label = "detect edge"
+            style = { styles.detectEdges }
+            />
 
-                <RaisedButton
-                    primary
-                    fullWidth
-                    onClick={this.handleClose}
-                    label="close"
-                />
-            </div>
+            <
+            RaisedButton primary fullWidth onClick = { this.handleClose }
+            label = "close" /
+            >
+            <
+            /div>
         );
     }
 }

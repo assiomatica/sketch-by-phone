@@ -1,4 +1,5 @@
 /* globals THREE, requestAnimationFrame */
+/* eslint-disable */
 import React, { Component } from 'react';
 import initializeRenderer from './utils/initializeRenderer';
 import { initializeArToolkit, getMarker } from './utils/arToolkit';
@@ -49,7 +50,7 @@ export const sketchRendererFactory = ({ THREE, initializeArToolkit, initializeRe
             });
 
             this.mesh = new Mesh(geometry, this.material);
-            this.mesh.rotation.x = - Math.PI / 2; // -90°
+            this.mesh.rotation.x = -Math.PI / 2; // -90°
             this.mesh.rotation.z = rotation;
             this.mesh.position.x = coordX;
             this.mesh.position.z = coordZ;
@@ -59,7 +60,7 @@ export const sketchRendererFactory = ({ THREE, initializeArToolkit, initializeRe
             markerRoot.add(this.mesh);
 
             // render the scene
-            onRenderFcts.push(function(){
+            onRenderFcts.push(function() {
                 renderer.render(scene, camera);
             });
 
@@ -119,8 +120,10 @@ export const sketchRendererFactory = ({ THREE, initializeArToolkit, initializeRe
         }
 
         render() {
-            return (
-                <canvas id="root" ref={this.storeRef} />
+            return ( <
+                canvas id = "root"
+                ref = { this.storeRef }
+                />
             );
         }
     }

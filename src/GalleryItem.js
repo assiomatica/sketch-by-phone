@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -19,10 +20,15 @@ export default class GalleryItem extends Component {
     }
     render() {
         const { image } = this.props;
-        return (
-            <RaisedButton style={styles.button} onClick={this.handleClick}>
-                <img style={styles.image} src={image} alt="" />
-            </RaisedButton>
+        return ( <
+            RaisedButton style = { styles.button }
+            onClick = { this.handleClick } >
+            <
+            img style = { styles.image }
+            src = { image }
+            alt = "" / >
+            <
+            /RaisedButton>
         );
     }
 }
